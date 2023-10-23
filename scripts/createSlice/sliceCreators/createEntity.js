@@ -1,13 +1,20 @@
 const path = require('path');
-const existsAsync = require('../../fs/existAsync/existAsync');
 const fs = require('fs/promises');
+const existsAsync = require('../../fs/existAsync/existAsync');
 const createModel = require('./segments/createModel');
 const createLib = require('./segments/createLib');
 const createUi = require('./segments/createUi');
 const createPublicApi = require('./segments/createPublicApi');
 
 module.exports = async (sliceName) => {
-	const pathToEntities = path.resolve(__dirname, '..', '..', '..', 'src', 'entities');
+	const pathToEntities = path.resolve(
+		__dirname,
+		'..',
+		'..',
+		'..',
+		'src',
+		'entities'
+	);
 	const isExists = await existsAsync(pathToEntities);
 	if (!isExists) {
 		await fs.mkdir(pathToEntities);

@@ -3,7 +3,10 @@ export interface BuildBabelLoaderProps {
 	isDev?: boolean;
 }
 
-export const buildBabelLoader = ({ isTSX, isDev }: BuildBabelLoaderProps) => {
+export const buildBabelLoader = ({
+	isTSX,
+	isDev
+}: BuildBabelLoaderProps) => {
 	return {
 		test: isTSX ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
 		exclude: /node_modules/,

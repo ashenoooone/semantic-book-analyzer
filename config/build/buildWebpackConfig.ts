@@ -19,5 +19,8 @@ export default (options: BuildOptions): WebpackConfiguration => ({
 	module: {
 		rules: buildWebpackLoaders(options)
 	},
-	devServer: options.mode === 'development' ? buildDevServer(options) : undefined
+	devServer:
+		options.mode === 'development'
+			? buildDevServer(options)
+			: undefined
 });

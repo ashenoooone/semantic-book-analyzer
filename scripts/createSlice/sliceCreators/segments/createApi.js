@@ -15,6 +15,9 @@ export const ${sliceName}Thunk = createAsyncThunk(
 
 module.exports = async (apiPath, sliceName) => {
 	await fs.mkdir(apiPath);
-	const thunkPath = path.join(apiPath, `${toLowerCase(sliceName)}Thunk.ts`);
+	const thunkPath = path.join(
+		apiPath,
+		`${toLowerCase(sliceName)}Thunk.ts`
+	);
 	await fs.writeFile(thunkPath, getThunkContent(sliceName));
 };

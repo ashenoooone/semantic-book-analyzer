@@ -1,2 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-export const NavbarThunk = createAsyncThunk('Navbar', async (_, thunkAPI) => {});
+
+export const NavbarThunk = createAsyncThunk(
+	'Navbar',
+	async (_, thunkAPI) => {}
+);

@@ -2,11 +2,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-ExtraBold.eot');
 	src:
-		url('JetBrainsMono-ExtraBold.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-ExtraBold.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-ExtraBold.woff2') format('woff2'),
 		url('JetBrainsMono-ExtraBold.woff') format('woff'),
 		url('JetBrainsMono-ExtraBold.ttf') format('truetype'),
-		url('JetBrainsMono-ExtraBold.svg#JetBrainsMono-ExtraBold') format('svg');
+		url('JetBrainsMono-ExtraBold.svg#JetBrainsMono-ExtraBold')
+			format('svg');
 	font-weight: bold;
 	font-style: normal;
 	font-display: swap;
@@ -30,11 +32,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-BoldItalic.eot');
 	src:
-		url('JetBrainsMono-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-BoldItalic.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-BoldItalic.woff2') format('woff2'),
 		url('JetBrainsMono-BoldItalic.woff') format('woff'),
 		url('JetBrainsMono-BoldItalic.ttf') format('truetype'),
-		url('JetBrainsMono-BoldItalic.svg#JetBrainsMono-BoldItalic') format('svg');
+		url('JetBrainsMono-BoldItalic.svg#JetBrainsMono-BoldItalic')
+			format('svg');
 	font-weight: bold;
 	font-style: italic;
 	font-display: swap;
@@ -44,11 +48,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-ExtraLight.eot');
 	src:
-		url('JetBrainsMono-ExtraLight.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-ExtraLight.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-ExtraLight.woff2') format('woff2'),
 		url('JetBrainsMono-ExtraLight.woff') format('woff'),
 		url('JetBrainsMono-ExtraLight.ttf') format('truetype'),
-		url('JetBrainsMono-ExtraLight.svg#JetBrainsMono-ExtraLight') format('svg');
+		url('JetBrainsMono-ExtraLight.svg#JetBrainsMono-ExtraLight')
+			format('svg');
 	font-weight: 200;
 	font-style: normal;
 	font-display: swap;
@@ -58,11 +64,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-ExtraBoldItalic.eot');
 	src:
-		url('JetBrainsMono-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-ExtraBoldItalic.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-ExtraBoldItalic.woff2') format('woff2'),
 		url('JetBrainsMono-ExtraBoldItalic.woff') format('woff'),
 		url('JetBrainsMono-ExtraBoldItalic.ttf') format('truetype'),
-		url('JetBrainsMono-ExtraBoldItalic.svg#JetBrainsMono-ExtraBoldItalic') format('svg');
+		url('JetBrainsMono-ExtraBoldItalic.svg#JetBrainsMono-ExtraBoldItalic')
+			format('svg');
 	font-weight: bold;
 	font-style: italic;
 	font-display: swap;
@@ -72,11 +80,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-ExtraLightItalic.eot');
 	src:
-		url('JetBrainsMono-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-ExtraLightItalic.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-ExtraLightItalic.woff2') format('woff2'),
 		url('JetBrainsMono-ExtraLightItalic.woff') format('woff'),
 		url('JetBrainsMono-ExtraLightItalic.ttf') format('truetype'),
-		url('JetBrainsMono-ExtraLightItalic.svg#JetBrainsMono-ExtraLightItalic') format('svg');
+		url('JetBrainsMono-ExtraLightItalic.svg#JetBrainsMono-ExtraLightItalic')
+			format('svg');
 	font-weight: 200;
 	font-style: italic;
 	font-display: swap;
@@ -128,11 +138,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-LightItalic.eot');
 	src:
-		url('JetBrainsMono-LightItalic.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-LightItalic.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-LightItalic.woff2') format('woff2'),
 		url('JetBrainsMono-LightItalic.woff') format('woff'),
 		url('JetBrainsMono-LightItalic.ttf') format('truetype'),
-		url('JetBrainsMono-LightItalic.svg#JetBrainsMono-LightItalic') format('svg');
+		url('JetBrainsMono-LightItalic.svg#JetBrainsMono-LightItalic')
+			format('svg');
 	font-weight: 300;
 	font-style: italic;
 	font-display: swap;
@@ -142,11 +154,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-Regular.eot');
 	src:
-		url('JetBrainsMono-Regular.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-Regular.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-Regular.woff2') format('woff2'),
 		url('JetBrainsMono-Regular.woff') format('woff'),
 		url('JetBrainsMono-Regular.ttf') format('truetype'),
-		url('JetBrainsMono-Regular.svg#JetBrainsMono-Regular') format('svg');
+		url('JetBrainsMono-Regular.svg#JetBrainsMono-Regular')
+			format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -156,11 +170,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-SemiBold.eot');
 	src:
-		url('JetBrainsMono-SemiBold.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-SemiBold.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-SemiBold.woff2') format('woff2'),
 		url('JetBrainsMono-SemiBold.woff') format('woff'),
 		url('JetBrainsMono-SemiBold.ttf') format('truetype'),
-		url('JetBrainsMono-SemiBold.svg#JetBrainsMono-SemiBold') format('svg');
+		url('JetBrainsMono-SemiBold.svg#JetBrainsMono-SemiBold')
+			format('svg');
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -170,11 +186,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-MediumItalic.eot');
 	src:
-		url('JetBrainsMono-MediumItalic.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-MediumItalic.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-MediumItalic.woff2') format('woff2'),
 		url('JetBrainsMono-MediumItalic.woff') format('woff'),
 		url('JetBrainsMono-MediumItalic.ttf') format('truetype'),
-		url('JetBrainsMono-MediumItalic.svg#JetBrainsMono-MediumItalic') format('svg');
+		url('JetBrainsMono-MediumItalic.svg#JetBrainsMono-MediumItalic')
+			format('svg');
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
@@ -184,11 +202,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-SemiBoldItalic.eot');
 	src:
-		url('JetBrainsMono-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-SemiBoldItalic.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-SemiBoldItalic.woff2') format('woff2'),
 		url('JetBrainsMono-SemiBoldItalic.woff') format('woff'),
 		url('JetBrainsMono-SemiBoldItalic.ttf') format('truetype'),
-		url('JetBrainsMono-SemiBoldItalic.svg#JetBrainsMono-SemiBoldItalic') format('svg');
+		url('JetBrainsMono-SemiBoldItalic.svg#JetBrainsMono-SemiBoldItalic')
+			format('svg');
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
@@ -212,11 +232,13 @@
 	font-family: 'JetBrains Mono';
 	src: url('JetBrainsMono-ThinItalic.eot');
 	src:
-		url('JetBrainsMono-ThinItalic.eot?#iefix') format('embedded-opentype'),
+		url('JetBrainsMono-ThinItalic.eot?#iefix')
+			format('embedded-opentype'),
 		url('JetBrainsMono-ThinItalic.woff2') format('woff2'),
 		url('JetBrainsMono-ThinItalic.woff') format('woff'),
 		url('JetBrainsMono-ThinItalic.ttf') format('truetype'),
-		url('JetBrainsMono-ThinItalic.svg#JetBrainsMono-ThinItalic') format('svg');
+		url('JetBrainsMono-ThinItalic.svg#JetBrainsMono-ThinItalic')
+			format('svg');
 	font-weight: 100;
 	font-style: italic;
 	font-display: swap;

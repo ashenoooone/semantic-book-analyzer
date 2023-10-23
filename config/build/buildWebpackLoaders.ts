@@ -3,7 +3,9 @@ import webpack from 'webpack';
 import { BuildOptions } from './types';
 import { buildBabelLoader } from './loaders/buildBabelLoader';
 
-export const buildWebpackLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
+export const buildWebpackLoaders = (
+	options: BuildOptions
+): webpack.RuleSetRule[] => {
 	const isDev = options.mode === 'development';
 
 	const cssLoader = {
@@ -52,5 +54,11 @@ export const buildWebpackLoaders = (options: BuildOptions): webpack.RuleSetRule[
 		]
 	};
 
-	return [fileLoader, cssLoader, codeBabelLoader, tsxBabelLoader, svgLoader];
+	return [
+		fileLoader,
+		cssLoader,
+		codeBabelLoader,
+		tsxBabelLoader,
+		svgLoader
+	];
 };

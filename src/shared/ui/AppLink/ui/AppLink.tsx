@@ -14,7 +14,9 @@ export const AppLink = (props: AppLinkProps) => {
 	return (
 		<NavLink
 			to={to}
-			className={({ isActive }) => [isActive ? cls.active : ''].join(' ')}
+			className={({ isActive }) =>
+				[isActive ? cls.active : ''].join(' ')
+			}
 			{...args}
 		>
 			{children}
