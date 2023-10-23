@@ -2,14 +2,30 @@
 	"compilerOptions": {
 		"outDir": "./build/",
 		"noImplicitAny": true,
-		"module": "es6",
+		"module": "ESNext",
 		"esModuleInterop": true,
 		"target": "es5",
 		"jsx": "react",
 		"allowJs": true,
 		"moduleResolution": "node",
-		"baseUrl": "."
+		"baseUrl": ".",
+		"isolatedModules": true,
+		"allowSyntheticDefaultImports": true,
+		"paths": {
+			"~/*": ["./src/*"],
+			"~": ["./src/*"]
+		}
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
 	},
 	"include": ["./src/**/*.ts", "./src/**/*.tsx", "declarations.d.ts"],
-	"exclude": ["node_modules"]
+	"exclude": [
+		"node_modules",
+		"./node_modules",
+		"./node_modules/*",
+		"./node_modules/@types/node/index.d.ts",
+	]
 }

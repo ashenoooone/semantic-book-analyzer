@@ -1,10 +1,14 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { RouterProvider } from './providers/RouterProvider';
+import { Navbar } from '~/widgets/Navbar';
 
-interface AppProps {
-	className?: string;
-	children?: ReactNode;
-}
-export function App(props: AppProps) {
-	const { className = '', children } = props;
-	return <div>2</div>;
+export function App() {
+	return (
+		<div className='app'>
+			<Navbar />
+			<div className='content-page'>
+				<RouterProvider />
+			</div>
+		</div>
+	);
 }
