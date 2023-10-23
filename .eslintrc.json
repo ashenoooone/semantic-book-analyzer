@@ -29,7 +29,9 @@
 	"rules": {
 		"react/jsx-uses-react": "off",
 		"react/react-in-jsx-scope": "off",
+		"react/button-has-type": [0],
 		"indent": [0],
+		"react/jsx-closing-tag-location": [0],
 		"implicit-arrow-linebreak": [0],
 		"react/jsx-curly-newline": [0],
 		"object-curly-newline": [0],

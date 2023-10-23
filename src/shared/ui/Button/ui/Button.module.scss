@@ -1,0 +1,12 @@
+.Button {
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: var(--inverted-primary-color);
+  padding: 10px 20px;
+  transition: all .1s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
+}

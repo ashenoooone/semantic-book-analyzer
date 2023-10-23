@@ -3,3 +3,4 @@ export {
 	uploadFilesSliceActions,
 	uploadFilesSliceReducer
 } from './model/slice/uploadFilesSlice';
+export { SendFiles } from './ui/SendFiles/SendFiles';

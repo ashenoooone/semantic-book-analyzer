@@ -1,25 +1,27 @@
 :root {
-	// fonts
-	--font-family-name: 'JetBrains Mono', 'Times New Roman', serif;
-	--font-size-xxl: 32px;
-	--font-line-xxl: 40px;
-	--font-xxl: var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-name);
-	--font-size-xl: 24px;
-	--font-line-xl: 32px;
-	--font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-name);
-	--font-size-md: 16px;
-	--font-line-md: 24px;
-	--font-md: var(--font-size-md) / var(--font-line-md) var(--font-family-name);
-	--font-line-sm: 16px;
-	--font-size-sm: 8px;
-	--font-sm: var(--font-size-sm) / var(--font-line-sm) var(--font-family-name);
-	// sizes
-	--navbar-height: 70px;
-	--sidebar-width: 300px;
-	--sidebar-width-colapsed: 100px;
-	// colors
-	--bg-color: #343434;
-	--primary-color: white;
-	--secondary-color: #8a8b8d;
-	--inverted-primary-color: black;
+  // fonts
+  --font-family-name: 'JetBrains Mono', 'Times New Roman', serif;
+  --font-size-xxl: 32px;
+  --font-line-xxl: 40px;
+  --font-xxl: var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-name);
+  --font-size-xl: 24px;
+  --font-line-xl: 32px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-name);
+  --font-size-md: 16px;
+  --font-line-md: 24px;
+  --font-md: var(--font-size-md) / var(--font-line-md) var(--font-family-name);
+  --font-line-sm: 16px;
+  --font-size-sm: 8px;
+  --font-sm: var(--font-size-sm) / var(--font-line-sm) var(--font-family-name);
+  // sizes
+  --navbar-height: 70px;
+  --sidebar-width: 300px;
+  --sidebar-width-colapsed: 100px;
+  // colors
+  --bg-color: #343434;
+  --bg-color-opacity-70: rgba(26, 26, 26, 0.4);
+  --primary-color: white;
+  --primary-color-70: rgba(255, 255, 255, .8);
+  --secondary-color: #8a8b8d;
+  --inverted-primary-color: black;
 }

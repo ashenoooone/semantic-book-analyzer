@@ -1,2 +1,51 @@
-.UploadFiles {
+.customFileUpload {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--primary-color);
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 48px 35px -48px rgba(0, 0, 0, 0.1);
+  transition: all .1s linear;
+
+  &:hover {
+    background-color: var(--bg-color-opacity-70);
+    color: var(--primary-color-70);
+    border: 2px dashed var(--primary-color-70);
+    .icon svg {
+      fill: var(--primary-color-70);
+    }
+  }
+}
+
+.customFileUpload .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customFileUpload .icon svg {
+  height: 80px;
+  fill: var(--primary-color);
+}
+
+.customFileUpload .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customFileUpload .text span {
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+.customFileUpload input {
+  display: none;
 }
