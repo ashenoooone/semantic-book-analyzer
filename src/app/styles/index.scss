@@ -1,18 +1,18 @@
 @import 'reset';
-@import "variables/variables";
+@import 'variables/variables';
 @import 'fonts/stylesheet.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .app {
-  background: var(--bg-color);
-  font: var(--font-md);
-  color: var(--primary-color);
-  min-height: 100vh;
+	background: var(--bg-color);
+	font: var(--font-md);
+	color: var(--primary-color);
+	min-height: 100vh;
 }
 
 .content-page {
-  display: flex;
-  padding: 20px;
+	display: flex;
+	padding: 20px;
 }

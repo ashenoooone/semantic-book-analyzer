@@ -1,0 +1,16 @@
+.Navbar {
+	height: var(--navbar-height);
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.icon {
+	height: 100%;
+}
+
+.links {
+	display: flex;
+	gap: 20px;
+}

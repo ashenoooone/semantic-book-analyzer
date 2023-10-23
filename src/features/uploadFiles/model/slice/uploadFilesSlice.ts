@@ -1,13 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-};
+const initialState = {};
 
 export const uploadFilesSlice = createSlice({
-  name: 'uploadFilesSlice',
-  initialState,
-  reducers: {
-  },
+	name: 'uploadFilesSlice',
+	initialState,
+	reducers: {}
 });
 
 export const { actions: uploadFilesSliceActions } = uploadFilesSlice;
