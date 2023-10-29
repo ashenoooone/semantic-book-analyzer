@@ -1,0 +1,19 @@
+.MainPage {
+	max-width: 1280px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: space-between;
+	margin: 0 auto;
+	gap: 15px;
+}
+
+.send_btn {
+	margin: 10px auto 0;
+}
+
+.upload {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

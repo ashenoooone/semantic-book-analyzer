@@ -1,0 +1,68 @@
+{
+	"env": {
+		"browser": true,
+		"es2022": true,
+		"node": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"prettier",
+		"airbnb"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": ["react", "@typescript-eslint"],
+	"settings": {
+		"react": {
+			"version": "999.999.999"
+		}
+	},
+	"rules": {
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/button-has-type": [0],
+		"no-underscore-dangle": [0],
+		"indent": [0],
+		"react/jsx-closing-tag-location": [0],
+		"implicit-arrow-linebreak": [0],
+		"react/jsx-curly-newline": [0],
+		"object-curly-newline": [0],
+		"react/self-closing-comp": [0],
+		"react/jsx-props-no-spreading": [0],
+		"no-tabs": [0],
+		"react/function-component-definition": [0],
+		"arrow-body-style": [0],
+		"react/jsx-indent": [0],
+		"react/require-default-props": [1],
+		"import/no-extraneous-dependencies": [0],
+		"import/extensions": [0],
+		"comma-dangle": [0],
+		"no-shadow": [0],
+		"jsx-quotes": ["error", "prefer-single"],
+		"react/jsx-indent-props": [0],
+		"import/no-unresolved": [0],
+		"no-param-reassign": [0],
+		"import/prefer-default-export": [0],
+		"@typescript-eslint/ban-ts-comment": [1],
+		"react/jsx-filename-extension": [
+			1,
+			{ "extensions": [".js", ".jsx", "tsx", "ts"] }
+		],
+		"@typescript-eslint/no-unused-vars": [1],
+		"@typescript-eslint/no-var-requires": [1],
+		"@typescript-eslint/no-explicit-any": [1]
+	},
+	"globals": {
+		"__API__": true,
+		"__IS_DEV__": true
+	}
+}
