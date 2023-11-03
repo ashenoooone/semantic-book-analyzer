@@ -1,9 +1,21 @@
 .Button {
 	border-radius: 8px;
-	background: var(--primary-color);
-	color: var(--inverted-primary-color);
 	padding: 10px 20px;
 	transition: all 0.1s ease-in-out;
+
+	&:disabled {
+		@apply opacity-50 pointer-events-none;
+	}
+
+	&.default {
+		background: var(--primary-color);
+		color: var(--inverted-primary-color);
+	}
+
+	&.inverted {
+		background: var(--inverted-primary-color);
+		color: var(--primary-color);
+	}
 
 	&:hover {
 		opacity: 0.8;

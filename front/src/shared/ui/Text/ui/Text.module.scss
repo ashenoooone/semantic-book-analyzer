@@ -1,0 +1,51 @@
+.Text {
+}
+
+.title {
+  color: var(--primary-color);
+}
+
+.text {
+  font: var(--font-md);
+  color: var(--secondary-color);
+}
+
+.error {
+  .title {
+    @apply text-red-500
+  }
+
+  .text {
+    @apply text-red-400;
+  }
+}
+
+.size_m {
+  .title {
+    font: var(--font-xl);
+  }
+
+  .text {
+    font: var(--font-md);
+  }
+}
+
+.size_sm {
+  .title {
+    font: var(--font-md);
+  }
+
+  .text {
+    font: var(--font-sm);
+  }
+}
+
+.size_l {
+  .title {
+    font: var(--font-xxl);
+  }
+
+  .text {
+    font: var(--font-xl);
+  }
+}

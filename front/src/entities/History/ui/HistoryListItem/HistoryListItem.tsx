@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React, { Fragment, memo } from 'react';
 import {
 	MdOutlineExpandMore,
 	MdOutlineExpandLess
 } from 'react-icons/md';
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Transition } from '@headlessui/react';
 import { classNames } from '~/shared/lib/classNames';
 import cls from './HistoryListItem.module.scss';
 import { HistoryItem } from '../../model/types';

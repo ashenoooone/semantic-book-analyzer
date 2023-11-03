@@ -8,10 +8,16 @@ import { To } from '@remix-run/router';
 import { NavigateOptions } from 'react-router/dist/lib/context';
 import { AxiosInstance } from 'axios';
 import { rtkApi } from '~/shared/api/rtkApi';
+import { UserSchema } from '~/entities/User';
+import { AuthUserSchema } from '~/features/authUser';
+import { RegisterUserSchema } from '~/features/registerUser';
 
 export interface StateSchema {
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
-	// асинхронные редьюсеры
+	user: UserSchema;
+	// async
+	loginForm?: AuthUserSchema;
+	registerForm?: RegisterUserSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

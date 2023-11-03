@@ -13,6 +13,7 @@ import {
 import { createReducerManager } from './reducerManager';
 import { rtkApi } from '~/shared/api/rtkApi';
 import { $api } from '~/shared/api/api';
+import { UserSliceReducer } from '~/entities/User';
 
 export function createReduxStore(
 	initialState?: StateSchema,
@@ -20,6 +21,7 @@ export function createReduxStore(
 ) {
 	const reducerManager = createReducerManager({
 		rtkApi: rtkApi.reducer,
+		user: UserSliceReducer,
 		...asyncReducers
 	});
 

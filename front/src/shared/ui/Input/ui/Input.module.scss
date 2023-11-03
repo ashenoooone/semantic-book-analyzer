@@ -1,0 +1,25 @@
+.Input {
+  border: 1px solid var(--secondary-color);
+  outline: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font: var(--font-md);
+
+  &:focus {
+    outline: 4px solid var(--bg-color-opacity-70);
+  }
+
+  &:disabled {
+    background: var(--w-400);
+    border: 1px solid var(--g-500);
+    font: var(--w-500);
+    opacity: 0.7;
+  }
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font: var(--font-md);
+  gap: 5px;
+}

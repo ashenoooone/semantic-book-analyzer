@@ -1,0 +1,25 @@
+.AuthUser {
+  background: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: var(--inverted-primary-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin-bottom: 20px;
+  font: var(--font-xl);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.button {
+  margin-top: 10px;
+  align-self: center;
+}

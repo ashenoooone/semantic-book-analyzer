@@ -1,0 +1,7 @@
+.RegisterPage {
+  min-height: calc(100vh - 2 * var(--navbar-height));
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
