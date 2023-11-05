@@ -3,7 +3,7 @@ import datetime
 from sqlalchemy import Column, DateTime, String, ForeignKey, LargeBinary
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 
-from models.BaseModel import EntityMeta
+from configs.Database import EntityMeta
 
 
 class Request(EntityMeta):

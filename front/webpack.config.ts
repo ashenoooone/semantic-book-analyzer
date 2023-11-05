@@ -5,6 +5,7 @@ import buildWebpackConfig from './config/build/buildWebpackConfig';
 export default (env: BuildEnv) => {
 	const port = 3000 || env.port;
 	const mode = env.mode || 'development';
+
 	const paths: BuildPaths = {
 		entry: path.resolve(__dirname, 'src', 'app', 'index.tsx'),
 		src: path.resolve(__dirname, 'src'),

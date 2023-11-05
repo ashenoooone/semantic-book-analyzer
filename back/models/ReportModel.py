@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Text, ForeignKey
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 
-from models.BaseModel import EntityMeta
+from configs.Database import EntityMeta
 
 
 class Report(EntityMeta):

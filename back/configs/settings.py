@@ -1,7 +1,7 @@
 from functools import lru_cache
 
-from pydantic_settings import BaseSettings
 from dotenv import find_dotenv
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     db_password: str
     db_host: str
     db_user: str
+    secret: str
 
     class Config:
         env_file = find_dotenv(".env")
