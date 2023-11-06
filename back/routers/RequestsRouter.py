@@ -1,8 +1,5 @@
-from typing import List, Optional
-
 from fastapi import APIRouter, Depends, status
 
-from models.RequestModel import Request
 from schemas.RequestSchema import RequestPostRequestSchema, RequestCreate
 from services.RequestService import RequestService
 

@@ -1,6 +1,6 @@
 from fastapi import Depends
 
-from models.RequestModel import Request
+from configs.Database import Request
 from repositories.RequestRepository import RequestRepository
 from schemas.RequestSchema import RequestPostRequestSchema
 

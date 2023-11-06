@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import cls from './RegisterUser.module.scss';
 import { Input } from '~/shared/ui/Input';
 import { Text } from '~/shared/ui/Text';
@@ -13,6 +15,8 @@ import {
 import { useAppDispatch } from '~/shared/hooks/useAppDispatch';
 import { registerUserSliceActions } from '~/features/registerUser';
 import { RegisterUserErrors } from '~/features/registerUser/model/types';
+import { registerUserThunk } from '~/features/registerUser/api/registerUserThunk';
+import { RoutesPaths } from '~/shared/config/router/routerConfig';
 
 export const RegisterUser = () => {
 	const username = useSelector(getRegisterUserUsername);
@@ -20,9 +24,25 @@ export const RegisterUser = () => {
 	const passwordConfirm = useSelector(getRegisterUserPasswordConfirm);
 	const errors = useSelector(getRegisterUserErrors);
 	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
 
 	const onUsernameChange = useCallback(
 		(val: string) => {
+			if (
+				!/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(val)
+			) {
+				dispatch(
+					registerUserSliceActions.addError(
+						RegisterUserErrors.INVALID_EMAIL
+					)
+				);
+			} else {
+				dispatch(
+					registerUserSliceActions.removeError(
+						RegisterUserErrors.INVALID_EMAIL
+					)
+				);
+			}
 			dispatch(registerUserSliceActions.setUsername(val));
 		},
 		[dispatch]
@@ -52,17 +72,32 @@ export const RegisterUser = () => {
 			}
 			dispatch(registerUserSliceActions.setPasswordConfirm(val));
 		},
-		[dispatch, password, passwordConfirm]
+		[dispatch, password]
+	);
+	const onFormSubmit = useCallback(
+		(event: React.FormEvent<HTMLFormElement>) => {
+			event.preventDefault();
+			dispatch(registerUserThunk()).then(() => {
+				toast('Регистрация успешно завершена', {
+					type: 'success'
+				});
+				navigate(RoutesPaths.login);
+			});
+		},
+		[dispatch, navigate]
 	);
 
 	return (
-		<form className={cls.RegisterUser}>
+		<form
+			className={cls.RegisterUser}
+			onSubmit={onFormSubmit}
+		>
 			<div className={cls.heading}>Форма авторизации</div>
 			<div className={cls.form}>
 				<Input
 					required
 					value={username}
-					label='Логин'
+					label='Почта'
 					onChange={onUsernameChange}
 				/>
 				<Input

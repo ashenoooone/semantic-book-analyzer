@@ -1,8 +1,7 @@
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
-from configs.Database import get_async_session
-from models.RequestModel import Request
+from configs.Database import get_async_session, Request
 
 
 class RequestRepository:

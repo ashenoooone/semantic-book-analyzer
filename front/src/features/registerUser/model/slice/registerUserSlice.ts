@@ -1,12 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import { RegisterUserSchema } from '~/features/registerUser';
 import { RegisterUserErrors } from '~/features/registerUser/model/types';
+import { registerUserThunk } from '~/features/registerUser/api/registerUserThunk';
 
 const initialState: RegisterUserSchema = {
 	passwordConfirm: '',
 	errors: [],
 	password: '',
-	username: ''
+	username: '',
+	isLoading: false,
+	error: null
 };
 
 export const registerUserSlice = createSlice({
@@ -33,6 +37,20 @@ export const registerUserSlice = createSlice({
 		) => {
 			state.errors = state.errors.filter((e) => e !== action.payload);
 		}
+	},
+	extraReducers: (builder) => {
+		builder.addCase(registerUserThunk.pending, (state, action) => {
+			state.isLoading = true;
+			state.error = null;
+		});
+		builder.addCase(registerUserThunk.rejected, (state, action) => {
+			state.isLoading = false;
+			state.error = action.payload;
+		});
+		builder.addCase(registerUserThunk.fulfilled, (state, action) => {
+			state.isLoading = false;
+			state.error = null;
+		});
 	}
 });
 
