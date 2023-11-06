@@ -9,6 +9,9 @@ export const UserSlice = createSlice({
 	reducers: {
 		setUser: (state, action: PayloadAction<UserSchema>) => {
 			return action.payload;
+		},
+		setUserLogin: (state, action: PayloadAction<string>) => {
+			state.email = action.payload;
 		}
 	}
 });

@@ -1,1 +1,1 @@
-export const USER_LOCALSTORAGE_KEY = 'id';
+export const USER_LOCALSTORAGE_KEY = 'jwt';

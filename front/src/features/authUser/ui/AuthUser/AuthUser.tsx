@@ -1,5 +1,7 @@
 import React, { FC, ReactNode, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import cls from './AuthUser.module.scss';
 import { Input } from '~/shared/ui/Input';
 import { Button } from '~/shared/ui/Button';
@@ -10,11 +12,14 @@ import {
 	getAuthUserPassword,
 	getAuthUserUsername
 } from '~/features/authUser/model/selectors/authUserSelectors';
+import { authUserThunk } from '~/features/authUser/api/authUserThunk';
+import { RoutesPaths } from '~/shared/config/router/routerConfig';
 
 export const AuthUser = () => {
 	const dispatch = useAppDispatch();
 	const username = useSelector(getAuthUserUsername);
 	const password = useSelector(getAuthUserPassword);
+	const navigate = useNavigate();
 
 	const onLoginPage = useCallback(
 		(val: string) => {
@@ -29,9 +34,30 @@ export const AuthUser = () => {
 		},
 		[dispatch]
 	);
+	const onFormSubmit = useCallback(
+		(event: React.FormEvent<HTMLFormElement>) => {
+			event.preventDefault();
+			dispatch(authUserThunk()).then((r) => {
+				if (r.type.includes('fulfilled')) {
+					toast('Успешно', {
+						type: 'success'
+					});
+					navigate(RoutesPaths.main);
+				} else {
+					toast(r.payload.toString(), {
+						type: 'error'
+					});
+				}
+			});
+		},
+		[dispatch]
+	);
 
 	return (
-		<div className={cls.AuthUser}>
+		<form
+			className={cls.AuthUser}
+			onSubmit={onFormSubmit}
+		>
 			<div className={cls.heading}>Форма авторизации</div>
 			<div className={cls.form}>
 				<Input
@@ -48,10 +74,11 @@ export const AuthUser = () => {
 			</div>
 			<Button
 				theme='inverted'
+				type='submit'
 				className={cls.button}
 			>
 				Авторизоваться
 			</Button>
-		</div>
+		</form>
 	);
 };
