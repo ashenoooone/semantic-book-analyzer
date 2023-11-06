@@ -33,7 +33,7 @@ export const authUserThunk = createAsyncThunk<
 		thunkAPI.dispatch(UserSliceActions.setUserLogin(username));
 		localStorage.setItem(
 			USER_LOCALSTORAGE_KEY,
-			JSON.stringify(response.data.access_token)
+			response.data.access_token
 		);
 		return response.data;
 	} catch (e) {

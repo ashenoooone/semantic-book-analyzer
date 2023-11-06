@@ -4,3 +4,4 @@ export {
 	authUserSliceReducer
 } from './model/slice/authUserSlice';
 export type { AuthUserSchema } from './model/types';
+export { initUserThunk } from './api/initUserThunk';

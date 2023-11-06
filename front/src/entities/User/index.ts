@@ -4,3 +4,4 @@ export {
 	UserSliceReducer
 } from './model/slice/userSlice';
 export type { UserSchema } from './model/types';
+export * from './model/selectors/getUserSlice';
