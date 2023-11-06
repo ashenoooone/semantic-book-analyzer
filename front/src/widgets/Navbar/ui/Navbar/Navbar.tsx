@@ -11,6 +11,7 @@ export const Navbar = () => {
 			<div className={cls.links}>
 				<AppLink to={RoutesPaths.history}>История</AppLink>
 				<AppLink to={RoutesPaths.main}>Анализ</AppLink>
+				<AppLink to={RoutesPaths.profile}>Профиль</AppLink>
 			</div>
 		</nav>
 	);

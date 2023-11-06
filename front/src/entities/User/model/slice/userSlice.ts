@@ -18,7 +18,8 @@ export const UserSlice = createSlice({
 		setUserLogin: (state, action: PayloadAction<string>) => {
 			state.mounted = true;
 			state.email = action.payload;
-		}
+		},
+		clearUser: (state) => ({ ...initialState, mounted: true })
 	},
 	extraReducers: (builder) => {
 		builder.addCase(initUserThunk.fulfilled, (state, action) => {

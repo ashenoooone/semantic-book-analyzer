@@ -1,0 +1,4 @@
+.ProfilePage {
+  height: var(100vh - var(--navbar-height));
+  @apply p-10 w-full flex items-center justify-center
+}

@@ -5,6 +5,7 @@ import { NotFoundPage } from '~/pages/NotFoundPage';
 import { HistoryPage } from '~/pages/HistoryPage';
 import { RegisterPage } from '~/pages/RegisterPage';
 import { LoginPage } from '~/pages/LoginPage';
+import { ProfilePage } from '~/pages/ProfilePage';
 
 export type RoutesProps = RouteProps & {
 	authOnly?: boolean;
@@ -15,6 +16,7 @@ export enum Routes {
 	HISTORY = 'history',
 	LOGIN = 'login',
 	REGISTER = 'register',
+	PROFILE = 'profile',
 	NOT_FOUND = 'not_found'
 }
 
@@ -23,6 +25,7 @@ export const RoutesPaths: Record<Routes, string> = {
 	[Routes.HISTORY]: '/history',
 	[Routes.LOGIN]: '/login',
 	[Routes.REGISTER]: '/register',
+	[Routes.PROFILE]: '/profile',
 	[Routes.NOT_FOUND]: '*'
 };
 
@@ -35,6 +38,11 @@ export const RoutesConfig: Record<Routes, RoutesProps> = {
 	[Routes.HISTORY]: {
 		path: RoutesPaths.history,
 		element: <HistoryPage />,
+		authOnly: true
+	},
+	[Routes.PROFILE]: {
+		path: RoutesPaths.profile,
+		element: <ProfilePage />,
 		authOnly: true
 	},
 	[Routes.LOGIN]: {

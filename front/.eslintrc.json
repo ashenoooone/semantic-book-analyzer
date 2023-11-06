@@ -46,6 +46,7 @@
 		"import/no-extraneous-dependencies": [0],
 		"import/extensions": [0],
 		"comma-dangle": [0],
+		"react/jsx-one-expression-per-line": [0],
 		"operator-linebreak": [0],
 		"no-shadow": [0],
 		"jsx-quotes": ["error", "prefer-single"],
