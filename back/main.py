@@ -4,6 +4,7 @@ from starlette.middleware.cors import CORSMiddleware
 
 from configs.Database import create_db_and_tables
 from routers.RequestsRouter import RequestsRouter
+from routers.ResultRouter import ResultRouter
 from routers.UserRouter import UserRouter
 
 app = FastAPI()
@@ -23,6 +24,7 @@ app.add_middleware(
 
 app.include_router(UserRouter)
 app.include_router(RequestsRouter)
+app.include_router(ResultRouter)
 
 
 @app.on_event("startup")

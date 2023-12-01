@@ -1,34 +1,35 @@
 import React from 'react';
 import cls from './MainPage.module.scss';
-import { SendFiles, UploadFiles } from '~/features/uploadFiles';
+import {
+	SendFiles,
+	UploadFiles,
+	uploadFilesSliceReducer
+} from '~/features/uploadFiles';
 import { HistoryList } from '~/entities/History';
+import { DynamicModuleLoader } from '~/shared/ui/DynamicModuleLoader';
+import { FetchHistory } from '~/features/fetchHistory';
+import { Text } from '~/shared/ui/Text';
 
 export default function MainPage() {
 	return (
-		<div className={cls.MainPage}>
-			<div className={cls.upload}>
-				<UploadFiles />
-				<SendFiles className={cls.send_btn}>Отправить</SendFiles>
+		<DynamicModuleLoader
+			reducers={{
+				uploadFiles: uploadFilesSliceReducer
+			}}
+		>
+			<div className={cls.MainPage}>
+				<div className={cls.upload}>
+					<UploadFiles />
+					<SendFiles className={cls.send_btn}>Отправить</SendFiles>
+				</div>
+				<div>
+					<Text
+						title='Последние 10 запросов'
+						className='mb-4'
+					/>
+					<FetchHistory />
+				</div>
 			</div>
-			<HistoryList
-				items={[
-					{
-						title: 'Математика в дискретке',
-						id: '213123213',
-						tags: ['математика', 'дискретка', 'логика']
-					},
-					{
-						title: 'Русский',
-						id: '213123213',
-						tags: ['математика', 'дискретка', 'логика']
-					},
-					{
-						title: 'Литература',
-						id: '213123213',
-						tags: ['математика', 'дискретка', 'логика']
-					}
-				]}
-			/>
-		</div>
+		</DynamicModuleLoader>
 	);
 }

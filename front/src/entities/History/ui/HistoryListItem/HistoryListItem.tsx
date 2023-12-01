@@ -1,13 +1,8 @@
-import React, { Fragment, memo } from 'react';
-import {
-	MdOutlineExpandMore,
-	MdOutlineExpandLess
-} from 'react-icons/md';
-import { Disclosure, Transition } from '@headlessui/react';
-import { classNames } from '~/shared/lib/classNames';
+import React, { memo } from 'react';
 import cls from './HistoryListItem.module.scss';
 import { HistoryItem } from '../../model/types';
 import { Tab } from '~/shared/ui/Tab';
+import { Disclosure } from '~/shared/ui/Disclosure';
 
 interface HistoryListItemProps {
 	className?: string;
@@ -18,31 +13,17 @@ export const HistoryListItem = memo((props: HistoryListItemProps) => {
 	const { className = '', item } = props;
 	return (
 		<Disclosure
-			as='div'
-			className={classNames(cls.HistoryListItem, {}, [className])}
+			className={className}
+			title={`${item?.bookTitle.split('.')[0]} ${new Date(
+				item.time
+			).toLocaleTimeString()}`}
 		>
-			{({ open }) => (
-				<>
-					<header className={cls.header}>
-						{item.title}
-						<Disclosure.Button className={cls.btn}>
-							{open ? (
-								<MdOutlineExpandLess className={cls.icon} />
-							) : (
-								<MdOutlineExpandMore className={cls.icon} />
-							)}
-						</Disclosure.Button>
-					</header>
-					<Disclosure.Panel className={cls.panel}>
-						<h2 className={cls.panel_header}>Словарь</h2>
-						<div className={cls.tabs}>
-							{item.tags.map((i) => (
-								<Tab key={i}>{i}</Tab>
-							))}
-						</div>
-					</Disclosure.Panel>
-				</>
-			)}
+			<h2 className={cls.panel_header}>Словарь</h2>
+			<div className={cls.tabs}>
+				{item.tags.map((i) => (
+					<Tab key={i}>{i}</Tab>
+				))}
+			</div>
 		</Disclosure>
 	);
 });

@@ -4,3 +4,4 @@ export {
 	HistorySliceReducer
 } from './model/slice/historySlice';
 export { HistoryListItem } from './ui/HistoryListItem/HistoryListItem';
+export * from './model/types';

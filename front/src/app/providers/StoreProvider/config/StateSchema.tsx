@@ -11,6 +11,7 @@ import { rtkApi } from '~/shared/api/rtkApi';
 import { UserSchema } from '~/entities/User';
 import { AuthUserSchema } from '~/features/authUser';
 import { RegisterUserSchema } from '~/features/registerUser';
+import { UploadFilesSchema } from '~/features/uploadFiles';
 
 export interface StateSchema {
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
@@ -18,6 +19,7 @@ export interface StateSchema {
 	// async
 	loginForm?: AuthUserSchema;
 	registerForm?: RegisterUserSchema;
+	uploadFiles?: UploadFilesSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

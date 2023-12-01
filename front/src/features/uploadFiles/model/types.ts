@@ -1,1 +1,3 @@
-export interface UploadFilesSchema {}
+export interface UploadFilesSchema {
+	files: File[];
+}

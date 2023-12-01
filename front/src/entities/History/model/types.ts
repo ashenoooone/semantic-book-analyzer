@@ -1,7 +1,8 @@
 export interface HistorySchema {}
 
 export interface HistoryItem {
-	title: string;
+	bookTitle: string;
 	id: string;
 	tags?: string[];
+	time?: string;
 }

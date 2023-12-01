@@ -47,6 +47,7 @@
 		"import/extensions": [0],
 		"comma-dangle": [0],
 		"react/jsx-one-expression-per-line": [0],
+		"react/no-array-index-key": [0],
 		"operator-linebreak": [0],
 		"no-shadow": [0],
 		"jsx-quotes": ["error", "prefer-single"],

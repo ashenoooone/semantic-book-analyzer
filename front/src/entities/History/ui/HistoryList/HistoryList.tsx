@@ -3,6 +3,7 @@ import cls from './HistoryList.module.scss';
 import { HistoryItem } from '../../model/types';
 import { HistoryListItem } from '../HistoryListItem/HistoryListItem';
 import { classNames } from '~/shared/lib/classNames';
+import { Text } from '~/shared/ui/Text';
 
 interface HistoryProps {
 	className?: string;
@@ -23,7 +24,7 @@ export const HistoryList = (props: HistoryProps) => {
 
 	return (
 		<div className={classNames(cls.History, {}, [className])}>
-			{items.map(renderHistoryItem)}
+			{items?.map(renderHistoryItem) ?? <Text title='Пусто' />}
 		</div>
 	);
 };

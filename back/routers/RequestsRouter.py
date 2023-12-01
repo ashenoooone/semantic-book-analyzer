@@ -1,18 +1,25 @@
-from fastapi import APIRouter, Depends, status
+from typing import List, Annotated
 
-from schemas.RequestSchema import RequestPostRequestSchema, RequestCreate
+from fastapi import APIRouter, Depends, status, UploadFile, File, Form
+
+from configs.Database import User
 from services.RequestService import RequestService
+from services.UserService import current_active_user
 
 RequestsRouter = APIRouter(prefix="/v1/requests", tags=["requests"])
 
 
 @RequestsRouter.post(
     "/",
-    response_model=RequestCreate,
     status_code=status.HTTP_201_CREATED,
 )
-def create(
-        request: RequestPostRequestSchema,
+async def create(
+        files: Annotated[list[UploadFile], Form()],
+        user: User = Depends(current_active_user),
         requests_service: RequestService = Depends(),
 ):
-    return requests_service.create(request).normalize()
+    try:
+        res = await requests_service.create(files, user)
+        return res.model_dump()
+    except ValueError as e:
+        return {"error": str(e)}

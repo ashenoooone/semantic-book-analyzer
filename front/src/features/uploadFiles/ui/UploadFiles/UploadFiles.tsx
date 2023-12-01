@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import cls from './UploadFiles.module.scss';
+import { useAppDispatch } from '~/shared/hooks/useAppDispatch';
+import { uploadFilesSliceActions } from '~/features/uploadFiles';
+import { getUploadFilesFiles } from '../../model/selectors/selectors';
+import { classNames } from '~/shared/lib/classNames';
 
 export const UploadFiles = () => {
+	const dispatch = useAppDispatch();
+	const files = useSelector(getUploadFilesFiles);
+
+	const onChangeHandler = useCallback(
+		(event: React.ChangeEvent<HTMLInputElement>) => {
+			const { files } = event.target;
+			if (files) {
+				dispatch(uploadFilesSliceActions.setFiles(Array.from(files)));
+			}
+		},
+		[dispatch]
+	);
 	return (
 		<label
-			className={cls.customFileUpload}
+			className={classNames(cls.customFileUpload, {
+				[cls.success]: files?.length > 0
+			})}
 			htmlFor='file'
 		>
 			<div className={cls.icon}>
@@ -34,13 +53,18 @@ export const UploadFiles = () => {
 				</svg>
 			</div>
 			<div className={cls.text}>
-				<span>Загрузите файлы</span>
+				<span>
+					{files?.length > 0
+						? 'Файлы успешно загружены'
+						: 'Загрузите файлы'}
+				</span>
 			</div>
 			<input
 				type='file'
 				id='file'
 				multiple
 				accept='.pdf'
+				onChange={onChangeHandler}
 			/>
 		</label>
 	);

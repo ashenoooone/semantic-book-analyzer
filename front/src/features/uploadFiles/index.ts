@@ -4,3 +4,4 @@ export {
 	uploadFilesSliceReducer
 } from './model/slice/uploadFilesSlice';
 export { SendFiles } from './ui/SendFiles/SendFiles';
+export * from './model/types';
