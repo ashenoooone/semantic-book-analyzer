@@ -12,6 +12,8 @@ import { UserSchema } from '~/entities/User';
 import { AuthUserSchema } from '~/features/authUser';
 import { RegisterUserSchema } from '~/features/registerUser';
 import { UploadFilesSchema } from '~/features/uploadFiles';
+import { HistoryFiltersSchema } from '~/features/historyFilters';
+import { FetchHistorySchema } from '~/features/fetchHistory';
 
 export interface StateSchema {
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
@@ -20,6 +22,8 @@ export interface StateSchema {
 	loginForm?: AuthUserSchema;
 	registerForm?: RegisterUserSchema;
 	uploadFiles?: UploadFilesSchema;
+	historyFilers?: HistoryFiltersSchema;
+	historyItems?: FetchHistorySchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

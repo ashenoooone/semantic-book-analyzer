@@ -46,6 +46,7 @@
 		"import/no-extraneous-dependencies": [0],
 		"import/extensions": [0],
 		"comma-dangle": [0],
+		"jsx-a11y/label-has-associated-control": [0],
 		"react/jsx-one-expression-per-line": [0],
 		"react/no-array-index-key": [0],
 		"operator-linebreak": [0],

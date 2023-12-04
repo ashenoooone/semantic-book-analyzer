@@ -24,7 +24,9 @@ export const HistoryList = (props: HistoryProps) => {
 
 	return (
 		<div className={classNames(cls.History, {}, [className])}>
-			{items?.map(renderHistoryItem) ?? <Text title='Пусто' />}
+			{(items?.length > 0 && items?.map(renderHistoryItem)) || (
+				<Text title='Пусто' />
+			)}
 		</div>
 	);
 };

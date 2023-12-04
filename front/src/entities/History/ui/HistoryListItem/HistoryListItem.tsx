@@ -16,7 +16,7 @@ export const HistoryListItem = memo((props: HistoryListItemProps) => {
 			className={className}
 			title={`${item?.bookTitle.split('.')[0]} ${new Date(
 				item.time
-			).toLocaleTimeString()}`}
+			).toLocaleString()}`}
 		>
 			<h2 className={cls.panel_header}>Словарь</h2>
 			<div className={cls.tabs}>

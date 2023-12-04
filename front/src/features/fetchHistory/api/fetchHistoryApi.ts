@@ -1,9 +1,6 @@
 import { HistoryItem } from '~/entities/History';
 import { rtkApi } from '~/shared/api/rtkApi';
-
-export interface FetchHistoryApi {
-	limit?: number;
-}
+import { HistoryFiltersSchema } from '~/features/historyFilters';
 
 export interface FetchHistoryAnswer {
 	data?: HistoryItem[];
@@ -11,13 +8,19 @@ export interface FetchHistoryAnswer {
 
 const fetchHistoryApi = rtkApi.injectEndpoints({
 	endpoints: (build) => ({
-		fetchHistory: build.query<FetchHistoryAnswer, FetchHistoryApi>({
+		fetchHistory: build.query<
+			FetchHistoryAnswer,
+			HistoryFiltersSchema
+		>({
 			providesTags: ['history'],
-			query: (props) => ({
+			query: (filters) => ({
 				url: '/v1/results/',
 				method: 'GET',
 				params: {
-					limit: props.limit
+					limit: filters?.limit ?? 10,
+					searchText: filters?.searchText,
+					page: filters?.page,
+					order: filters?.order
 				}
 			})
 		})
