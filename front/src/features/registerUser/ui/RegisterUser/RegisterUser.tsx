@@ -17,6 +17,7 @@ import { registerUserSliceActions } from '~/features/registerUser';
 import { RegisterUserErrors } from '~/features/registerUser/model/types';
 import { registerUserThunk } from '~/features/registerUser/api/registerUserThunk';
 import { RoutesPaths } from '~/shared/config/router/routerConfig';
+import { AppLink } from '~/shared/ui/AppLink';
 
 export const RegisterUser = () => {
 	const username = useSelector(getRegisterUserUsername);
@@ -92,7 +93,7 @@ export const RegisterUser = () => {
 			className={cls.RegisterUser}
 			onSubmit={onFormSubmit}
 		>
-			<div className={cls.heading}>Форма авторизации</div>
+			<div className={cls.heading}>Форма регистрации</div>
 			<div className={cls.form}>
 				<Input
 					required
@@ -122,6 +123,12 @@ export const RegisterUser = () => {
 						/>
 					))}
 			</div>
+			<AppLink
+				className={cls.link}
+				to={RoutesPaths.login}
+			>
+				Есть аккаунт? Авторизоваться
+			</AppLink>
 			<Button
 				type='submit'
 				disabled={errors.length > 0}

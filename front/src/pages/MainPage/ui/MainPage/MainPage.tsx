@@ -5,7 +5,6 @@ import {
 	UploadFiles,
 	uploadFilesSliceReducer
 } from '~/features/uploadFiles';
-import { HistoryList } from '~/entities/History';
 import { DynamicModuleLoader } from '~/shared/ui/DynamicModuleLoader';
 import { FetchHistory } from '~/features/fetchHistory';
 import { Text } from '~/shared/ui/Text';

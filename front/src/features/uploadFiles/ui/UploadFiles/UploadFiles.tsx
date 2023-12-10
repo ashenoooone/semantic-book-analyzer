@@ -19,6 +19,7 @@ export const UploadFiles = () => {
 		},
 		[dispatch]
 	);
+
 	return (
 		<label
 			className={classNames(cls.customFileUpload, {

@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import cls from './AuthUser.module.scss';
 import { Input } from '~/shared/ui/Input';
 import { Button } from '~/shared/ui/Button';
@@ -14,6 +14,7 @@ import {
 } from '~/features/authUser/model/selectors/authUserSelectors';
 import { authUserThunk } from '~/features/authUser/api/authUserThunk';
 import { RoutesPaths } from '~/shared/config/router/routerConfig';
+import { AppLink } from '~/shared/ui/AppLink';
 
 export const AuthUser = () => {
 	const dispatch = useAppDispatch();
@@ -72,6 +73,12 @@ export const AuthUser = () => {
 					onChange={onPasswordChange}
 				/>
 			</div>
+			<AppLink
+				className={cls.link}
+				to={RoutesPaths.register}
+			>
+				Нет аккаунта? Зарегистрироваться
+			</AppLink>
 			<Button
 				theme='inverted'
 				type='submit'

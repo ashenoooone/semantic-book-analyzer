@@ -20,15 +20,12 @@ export const FetchHistoryThunk = memo(
 		const isLoading = useSelector(getHistoryListIsLoading);
 		const data = useSelector(getHistoryListData);
 		const error = useSelector(getHistoryListError);
-
 		if (isLoading) {
 			return <Spinner />;
 		}
-
 		if (error) {
 			return <div>error</div>;
 		}
-
 		return (
 			<HistoryList
 				className={classNames(cls.FetchHistory, {}, [className])}
