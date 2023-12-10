@@ -51,40 +51,9 @@ async def process_text(text: str):
     return text.strip()
 
 
-async def split_to_terms(text: str) -> list[str]:
-    pattern = r'\s+|,|\.|\(|\)|\n'
-    terms = re.split(pattern, text)
-    terms = [term for term in terms if term]
-    return terms
-
-
-async def remove_duplicates(unique_strings: set[str]):
-    result = []
-    for st in sorted(unique_strings, key=len, reverse=True):
-        if not any(st in existing for existing in result):
-            result.append(st)
-    return result
-
-
-async def generate_ngrams(text: list[str], n=3, include=False):
-    ngr = []
-    if include:
-        for i in range(1, n + 1):
-            ngr.extend([' '.join(ngram) for ngram in ngrams(text, i)])
-    else:
-        ngr.extend([' '.join(ngram) for ngram in ngrams(text, n)])
-    return ngr
-
-
 async def get_words_from_brackets(text: str) -> list[str]:
     words = re.findall(r"«([а-яa-zё ]+)»", text, flags=re.IGNORECASE)
     return words
-
-
-async def is_trigram_matching(trigram) -> bool:
-    trigram = [_.lemma_ for _ in trigram]
-    if trigram[0] == 'ADJ' and trigram[1] == 'NOUN' and trigram[2] == 'PROPN':
-        return True
 
 
 async def get_nlp_keywords(text: str) -> set[str]:
@@ -118,18 +87,14 @@ async def get_nlp_keywords(text: str) -> set[str]:
 async def get_keywords(text: str) -> list[str]:
     res = set()
     text = await process_text(text)
-    print(text)
     names = await get_names(text)
     words_from_brackets = await get_words_from_brackets(text)
     res = res | set(names)
     res = res | set(words_from_brackets)
-    for w in res:
-        text = re.sub(w, "", text, flags=re.IGNORECASE)
     nlp_keywords = await get_nlp_keywords(text)
     yake_keywords = yake.generate_keywords(text, from_grams=3, n=5)
     res = res | set(nlp_keywords)
     res = res | set(yake_keywords)
-    print(yake_keywords)
     return [_.lower() for _ in res]
 
 

@@ -11,8 +11,7 @@
 		"lint": "eslint --ext .ts,.tsx",
 		"lint:fix": "npm run lint -- --fix",
 		"prettier": "prettier --write .",
-		"build-storybook": "storybook build",
-		"prepare": "husky install"
+		"build-storybook": "storybook build"
 	},
 	"keywords": [],
 	"author": "",
@@ -51,7 +50,6 @@
 		"eslint-plugin-react-hooks": "4.6.0",
 		"file-loader": "^6.2.0",
 		"html-webpack-plugin": "^5.5.0",
-		"husky": "^8.0.0",
 		"mini-css-extract-plugin": "^2.7.6",
 		"postcss-loader": "^7.3.3",
 		"prettier": "^3.0.3",
