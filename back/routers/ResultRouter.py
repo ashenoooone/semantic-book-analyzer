@@ -23,7 +23,6 @@ async def get(
 ):
     try:
         res = await results_service.get(user, limit, order, searchText, page)
-        print(res.model_dump())
         return res.model_dump()
     except ValueError as e:
         return {"error": str(e)}

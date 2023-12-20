@@ -35,7 +35,6 @@ class RequestService:
             result.bookTitle = created_req.bookTitle
             result.requestId = created_req.id
             result.tags = tags
-            print(intro, tags)
             created_result = await self.result_repository.create(result)
             result_req.result.append(created_result)
 

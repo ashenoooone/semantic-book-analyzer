@@ -66,20 +66,36 @@ async def get_nlp_keywords(text: str) -> set[str]:
             if token.pos_ == "ADJ" and doc[i + 1].pos_ == "NOUN" and token.text.lower() not in adj_stopwords \
                     and doc[i + 1].text.lower() not in noun_stopwords:
                 # Прилагательное + существительное
+                print('=' * 10)
+                print('Прилагательное + существительное')
+                print(f"{token.text} {doc[i + 1].text}")
+                print('=' * 10)
                 phrases.add(f"{token.text} {doc[i + 1].text}")
             elif token.pos_ == "VERB" and doc[i + 1].pos_ == "ADJ" and doc[i + 2].pos_ == "NOUN" \
                     and token.text.lower() not in verb_stopwords and doc[i + 1].text.lower() not in adj_stopwords \
                     and doc[i + 2].text.lower() not in noun_stopwords:
                 # Глагол + прилагательное + существительное
+                print('=' * 10)
+                print('Глагол + прилагательное + существительное')
+                print(f"{token.text} {doc[i + 1].text} {doc[i + 2].text}")
+                print('=' * 10)
                 phrases.add(f"{token.text} {doc[i + 1].text} {doc[i + 2].text}")
             elif token.pos_ == "NOUN" and doc[i + 1].pos_ == "PROPN" \
-                    and token.text.lower() not in noun_stopwords:
+                    and token.text.lower() not in noun_stopwords and doc[i + 1].text.lower() not in noun_stopwords:
                 # Существительное + имя собственное
+                print('=' * 10)
+                print('Существительное + имя собственное')
+                print(f"{token.text} {doc[i + 1].text}")
+                print('=' * 10)
                 phrases.add(f"{token.text} {doc[i + 1].text}")
             elif token.pos_ == "VERB" and doc[i + 1].pos_ == "NOUN" and doc[i + 1].dep_ == "nmod" and \
                     morph.parse(doc[i + 1].text)[0].tag.case == "gent" \
                     and token.text.lower() not in verb_stopwords and doc[i + 1].text.lower() not in noun_stopwords:
                 # Глагол + сущ в родительном падеже
+                print('=' * 10)
+                print('Глагол + сущ в родительном падеже')
+                print(f"{token.text} {doc[i + 1].text}")
+                print('=' * 10)
                 phrases.add(f"{token.text} {doc[i + 1].text}")
     return phrases
 
@@ -95,6 +111,11 @@ async def get_keywords(text: str) -> list[str]:
     yake_keywords = yake.generate_keywords(text, from_grams=3, n=5)
     res = res | set(nlp_keywords)
     res = res | set(yake_keywords)
+    print("#" * 10)
+    print(yake_keywords)
+    print("-" * 10)
+    print(nlp_keywords)
+    print("#" * 10)
     return [_.lower() for _ in res]
 
 
